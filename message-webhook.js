@@ -16,6 +16,7 @@ slackEvents.on("message", (event) => {
   );
   try {
     const { command, details } = getCommand(event.text);
+    console.log({ command, details });
     processMessage(command, details);
   } catch (error) {
     // Send unknown message

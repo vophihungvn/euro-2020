@@ -3,7 +3,7 @@ const { sendMessage, web } = require("./slack-service");
 const { getGroups, countryFlags, getSchedules } = require("./data-service");
 const getCommand = (message) => {
   const [command, ...details] = message.split(" ");
-  console.log({ command, details });
+  // console.log({ command, details });
   if (command !== "euro" && command != process.env.BOT_MENTIONED) {
     throw new Error("Command not found");
   }
@@ -12,7 +12,7 @@ const getCommand = (message) => {
 
   return {
     command: details[0],
-    details,
+    details: details.slice(1),
   };
 };
 
