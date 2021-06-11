@@ -1,92 +1,36 @@
-Group A:
-
-(1)  June/11   21:00    Turkey   -   Italy         @ Stadio Olimpico, Rome
-(2)  June/12   15:00    Wales    -   Switzerland   @ Olympic Stadium, Baku   # 17:00 UTC+4
-
-(13) June/16   18:00    Turkey   -   Wales         @ Olympic Stadium, Baku   # 20:00 UTC+4
-(14) June/16   21:00    Italy    -   Switzerland   @ Stadio Olimpico, Rome
-
-(25) June/20   18:00    Switzerland  - Turkey      @ Olympic Stadium, Baku   # 20:00 UTC+4
-(26) June/20   18:00    Italy        - Wales       @ Stadio Olimpico, Rome
-
-
-
-Group B:
-
-(3)  June/12  18:00     Denmark    -   Finland     @ Parken Stadium, Copenhagen
-(4)  June/12  21:00     Belgium    -   Russia      @ Krestovsky Stadium, Saint Petersburg  # 22:00 UTC+3
-
-(15) June/16  15:00     Finland    -   Russia      @ Krestovsky Stadium, Saint Petersburg  # 16:00 UTC+3
-(16) June/17  18:00     Denmark    -   Belgium     @ Parken Stadium, Copenhagen
-
-(27) June/21  21:00     Russia     -   Denmark     @ Parken Stadium, Copenhagen
-(28) June/21  21:00     Finland    -   Belgium     @ Krestovsky Stadium, Saint Petersburg   # 22:00 UTC+3
-
-
-
-
-Group C:
-
-(6)  June/13  18:00    Austria      -   North Macedonia   @ Arena Națională, Bucharest   # 19:00 UTC+3
-(5)  June/13  21:00    Netherlands  -   Ukraine           @ Johan Cruyff Arena, Amsterdam
-
-(18) June/17  15:00    Ukraine      -   North Macedonia   @ Arena Națională, Bucharest   # 16:00 UTC+3
-(17) June/17  21:00    Netherlands  -   Austria           @ Johan Cruyff Arena, Amsterdam
-
-(29) June/21  18:00    North Macedonia  -   Netherlands   @ Johan Cruyff Arena, Amsterdam
-(30) June/21  18:00    Ukraine          -   Austria       @ Arena Națională, Bucharest   # 19:00 UTC+3
-
-
-
-
-Group D:
-
-(7)  June/13  15:00    England         -  Croatia         @ Wembley Stadium, London  # 14:00 UTC+1
-(8)  June/14  15:00    Scotland        -  Czech Republic  @ Hampden Park, Glasgow   # 14:00 UTC+1
-
-(19) June/18  18:00    Croatia         -  Czech Republic  @ Hampden Park, Glasgow  # 17:00 UTC+1
-(20) June/18  21:00    England         -  Scotland        @ Wembley Stadium, London  # 20:00 UTC+1
-
-(31) June/22  21:00    Croatia         -  Scotland        @ Hampden Park, Glasgow  # 20:00 UTC+1
-(32) June/22  21:00    Czech Republic  -  England         @ Wembley Stadium, London  # 20:00 UTC+1
-
-
-
-
-Group E:
-
-(10) June/14  18:00    Poland          -  Slovakia        @ Krestovsky Stadium, Saint Petersburg   # 19:00 UTC+3
-(9)  June/14  21:00    Spain           -  Sweden          @ La Cartuja, Seville
-
-(21) June/18  15:00    Sweden          -  Slovakia        @ Krestovsky Stadium, Saint Petersburg   # 16:00 UTC+3
-(22) June/19  21:00    Spain           -  Poland          @ La Cartuja, Seville
-
-(33) June/23  18:00    Slovakia        -  Spain           @ La Cartuja, Seville
-(34) June/23  18:00    Sweden          -  Poland          @ Krestovsky Stadium, Saint Petersburg   # 19:00 UTC+3
-
-
-
-Group F:
-
-(11) June/15  18:00    Hungary         -  Portugal        @ Puskás Aréna, Budapest
-(12) June/15  21:00    France          -  Germany         @ Allianz Arena, Munich
-
-(23) June/19  15:00    Hungary         -  France          @ Puskás Aréna, Budapest
-(24) June/19  18:00    Portugal        -  Germany         @ Allianz Arena, Munich
-
-(35) June/23  21:00    Portugal        -  France          @ Puskás Aréna, Budapest
-(36) June/23  21:00    Germany         -  Hungary         @ Allianz Arena, Munich
-
-
-
-
-#############################
-# Knockout phase / Finals
-
-# Round of 16
-
-# Quarter-finals
-
-# Semi-finals
-
-# Final
+A | 06/12 | 02:00 | Turkey |  |  | Italy | @ Stadio Olimpico, Rome
+A | 06/12 | 20:00 | Wales |  |  | Switzerland | @ Olympic Stadium, Baku   # 17:00 UTC+4
+A | 06/16 | 23:00 | Turkey |  |  | Wales | @ Olympic Stadium, Baku   # 20:00 UTC+4
+A | 06/17 | 02:00 | Italy |  |  | Switzerland | @ Stadio Olimpico, Rome
+A | 06/20 | 23:00 | Switzerland |  |  | Turkey | @ Olympic Stadium, Baku   # 20:00 UTC+4
+A | 06/20 | 23:00 | Italy |  |  | Wales | @ Stadio Olimpico, Rome
+B | 06/12 | 23:00 | Denmark |  |  | Finland | @ Parken Stadium, Copenhagen
+B | 06/13 | 02:00 | Belgium |  |  | Russia | @ Krestovsky Stadium, Saint Petersburg  # 22:00 UTC+3
+B | 06/16 | 20:00 | Finland |  |  | Russia | @ Krestovsky Stadium, Saint Petersburg  # 16:00 UTC+3
+B | 06/17 | 23:00 | Denmark |  |  | Belgium | @ Parken Stadium, Copenhagen
+B | 06/22 | 02:00 | Russia |  |  | Denmark | @ Parken Stadium, Copenhagen
+B | 06/22 | 02:00 | Finland |  |  | Belgium | @ Krestovsky Stadium, Saint Petersburg   # 22:00 UTC+3
+C | 06/13 | 23:00 | Austria |  |  | North Macedonia | @ Arena Națională, Bucharest   # 19:00 UTC+3
+C | 06/14 | 02:00 | Netherlands |  |  | Ukraine | @ Johan Cruyff Arena, Amsterdam
+C | 06/17 | 20:00 | Ukraine |  |  | North Macedonia | @ Arena Națională, Bucharest   # 16:00 UTC+3
+C | 06/18 | 02:00 | Netherlands |  |  | Austria | @ Johan Cruyff Arena, Amsterdam
+C | 06/21 | 23:00 | North Macedonia |  |  | Netherlands | @ Johan Cruyff Arena, Amsterdam
+C | 06/21 | 23:00 | Ukraine |  |  | Austria | @ Arena Națională, Bucharest   # 19:00 UTC+3
+D | 06/13 | 20:00 | England |  |  | Croatia | @ Wembley Stadium, London  # 14:00 UTC+1
+D | 06/14 | 20:00 | Scotland |  |  | Czech Republic | @ Hampden Park, Glasgow   # 14:00 UTC+1
+D | 06/18 | 23:00 | Croatia |  |  | Czech Republic | @ Hampden Park, Glasgow  # 17:00 UTC+1
+D | 06/19 | 02:00 | England |  |  | Scotland | @ Wembley Stadium, London  # 20:00 UTC+1
+D | 06/23 | 02:00 | Croatia |  |  | Scotland | @ Hampden Park, Glasgow  # 20:00 UTC+1
+D | 06/23 | 02:00 | Czech Republic |  |  | England | @ Wembley Stadium, London  # 20:00 UTC+1
+E | 06/14 | 23:00 | Poland |  |  | Slovakia | @ Krestovsky Stadium, Saint Petersburg   # 19:00 UTC+3
+E | 06/15 | 02:00 | Spain |  |  | Sweden | @ La Cartuja, Seville
+E | 06/18 | 20:00 | Sweden |  |  | Slovakia | @ Krestovsky Stadium, Saint Petersburg   # 16:00 UTC+3
+E | 06/20 | 02:00 | Spain |  |  | Poland | @ La Cartuja, Seville
+E | 06/23 | 23:00 | Slovakia |  |  | Spain | @ La Cartuja, Seville
+E | 06/23 | 23:00 | Sweden |  |  | Poland | @ Krestovsky Stadium, Saint Petersburg   # 19:00 UTC+3
+F | 06/15 | 23:00 | Hungary  |  |  | Portugal | @ Puskás Aréna, Budapest
+F | 06/16 | 02:00 | France |  |  | Germany | @ Allianz Arena, Munich
+F | 06/19 | 20:00 | Hungary  |  |  | France | @ Puskás Aréna, Budapest
+F | 06/19 | 23:00 | Portugal |  |  | Germany | @ Allianz Arena, Munich
+F | 06/24 | 02:00 | Portugal |  |  | France | @ Puskás Aréna, Budapest
+F | 06/24 | 02:00 | Germany |  |  | Hungary | @ Allianz Arena, Munich

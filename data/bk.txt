@@ -1,0 +1,91 @@
+Group A:
+A 06/11   21:00    Turkey   -   Italy         @ Stadio Olimpico, Rome
+A 06/12   15:00    Wales    -   Switzerland   @ Olympic Stadium, Baku   # 17:00 UTC+4
+
+A 06/16   18:00    Turkey   -   Wales         @ Olympic Stadium, Baku   # 20:00 UTC+4
+A 06/16   21:00    Italy    -   Switzerland   @ Stadio Olimpico, Rome
+
+A 06/20   18:00    Switzerland  - Turkey      @ Olympic Stadium, Baku   # 20:00 UTC+4
+A 06/20   18:00    Italy        - Wales       @ Stadio Olimpico, Rome
+
+
+
+Group B:
+
+B 06/12  18:00     Denmark    -   Finland     @ Parken Stadium, Copenhagen
+B 06/12  21:00     Belgium    -   Russia      @ Krestovsky Stadium, Saint Petersburg  # 22:00 UTC+3
+
+B 06/16  15:00     Finland    -   Russia      @ Krestovsky Stadium, Saint Petersburg  # 16:00 UTC+3
+B 06/17  18:00     Denmark    -   Belgium     @ Parken Stadium, Copenhagen
+
+B 06/21  21:00     Russia     -   Denmark     @ Parken Stadium, Copenhagen
+B 06/21  21:00     Finland    -   Belgium     @ Krestovsky Stadium, Saint Petersburg   # 22:00 UTC+3
+
+
+
+
+Group C:
+
+C 06/13  18:00    Austria      -   North Macedonia   @ Arena Națională, Bucharest   # 19:00 UTC+3
+C 06/13  21:00    Netherlands  -   Ukraine           @ Johan Cruyff Arena, Amsterdam
+
+C 06/17  15:00    Ukraine      -   North Macedonia   @ Arena Națională, Bucharest   # 16:00 UTC+3
+C 06/17  21:00    Netherlands  -   Austria           @ Johan Cruyff Arena, Amsterdam
+
+C 06/21  18:00    North Macedonia  -   Netherlands   @ Johan Cruyff Arena, Amsterdam
+C 06/21  18:00    Ukraine          -   Austria       @ Arena Națională, Bucharest   # 19:00 UTC+3
+
+
+
+
+Group D:
+
+D 06/13  15:00    England         -  Croatia         @ Wembley Stadium, London  # 14:00 UTC+1
+D 06/14  15:00    Scotland        -  Czech Republic  @ Hampden Park, Glasgow   # 14:00 UTC+1
+
+D 06/18  18:00    Croatia         -  Czech Republic  @ Hampden Park, Glasgow  # 17:00 UTC+1
+D 06/18  21:00    England         -  Scotland        @ Wembley Stadium, London  # 20:00 UTC+1
+
+D 06/22  21:00    Croatia         -  Scotland        @ Hampden Park, Glasgow  # 20:00 UTC+1
+D 06/22  21:00    Czech Republic  -  England         @ Wembley Stadium, London  # 20:00 UTC+1
+
+
+
+
+Group E:
+
+E 06/14  18:00    Poland          -  Slovakia        @ Krestovsky Stadium, Saint Petersburg   # 19:00 UTC+3
+E 06/14  21:00    Spain           -  Sweden          @ La Cartuja, Seville
+
+E 06/18  15:00    Sweden          -  Slovakia        @ Krestovsky Stadium, Saint Petersburg   # 16:00 UTC+3
+E 06/19  21:00    Spain           -  Poland          @ La Cartuja, Seville
+
+E 06/23  18:00    Slovakia        -  Spain           @ La Cartuja, Seville
+E 06/23  18:00    Sweden          -  Poland          @ Krestovsky Stadium, Saint Petersburg   # 19:00 UTC+3
+
+
+
+Group F:
+
+F 06/15  18:00    Hungary         -  Portugal        @ Puskás Aréna, Budapest
+F 06/15  21:00    France          -  Germany         @ Allianz Arena, Munich
+
+F 06/19  15:00    Hungary         -  France          @ Puskás Aréna, Budapest
+F 06/19  18:00    Portugal        -  Germany         @ Allianz Arena, Munich
+
+F 06/23  21:00    Portugal        -  France          @ Puskás Aréna, Budapest
+F 06/23  21:00    Germany         -  Hungary         @ Allianz Arena, Munich
+
+
+
+
+#############################
+# Knockout phase / Finals
+
+# Round of 16
+
+# Quarter-finals
+
+# Semi-finals
+
+# Final

@@ -1,6 +1,6 @@
-Group A | Turkey | Italy | Wales | Switzerland
-Group B | Denmark | Finland | Belgium | Russia
-Group C | Netherlands | Ukraine | Austria | North Macedonia
-Group D | England | Croatia | Scotland | Czech Republic
-Group E | Spain | Sweden | Poland | Slovakia
-Group F | Hungary | Portugal | France | Germany
+A | Turkey | Italy | Wales | Switzerland
+B | Denmark | Finland | Belgium | Russia
+C | Netherlands | Ukraine | Austria | North Macedonia
+D | England | Croatia | Scotland | Czech Republic
+E | Spain | Sweden | Poland | Slovakia
+F | Hungary | Portugal | France | Germany

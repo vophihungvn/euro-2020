@@ -1,5 +1,6 @@
+const moment = require("moment");
 const { sendMessage, web } = require("./slack-service");
-const { getGroups, countryFlags } = require("./data-service");
+const { getGroups, countryFlags, getSchedules } = require("./data-service");
 const getCommand = (message) => {
   const [command, ...details] = message.split(" ");
   console.log({ command, details });
@@ -17,10 +18,8 @@ const getCommand = (message) => {
 
 const sendGroups = async () => {
   const groups = getGroups();
-  console.log(groups);
   const groupMessages = [];
   Object.keys(groups).forEach((group) => {
-    console.log(group);
     groupMessages.push({
       type: "divider",
     });
@@ -29,7 +28,7 @@ const sendGroups = async () => {
       type: "section",
       text: {
         type: "mrkdwn",
-        text: "*" + group + "*",
+        text: "* Group " + group + "*",
       },
     });
 
@@ -44,19 +43,55 @@ const sendGroups = async () => {
     });
   });
 
-  console.log(groupMessages);
   await sendMessage({
     blocks: [
       {
         type: "header",
         text: {
           type: "plain_text",
-          text: ":soccer:  Euro 2020 Groups",
+          text: ":soccer:  Euro 2020: Groups",
         },
       },
 
       ...groupMessages,
     ],
+  });
+};
+
+const sendTodayMatch = async () => {
+  const schedules = getSchedules();
+
+  const from = moment().hour(18).minute(0);
+  const to = moment().add(1, "d").hour(6);
+
+  const todaySchedule = schedules.filter((s) => {
+    return s.fullDate.isAfter(from) && s.fullDate.isBefore(to);
+  });
+
+  console.log(todaySchedule);
+  const groupMessages = [
+    {
+      type: "header",
+      text: {
+        type: "plain_text",
+        text: ":soccer:  Euro 2020: Today match",
+      },
+    },
+    ...todaySchedule.map((match) => ({
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        text: `:alarm_clock: ${match.fullDate.format(
+          "DD/MM @ HH:mm"
+        )}    |    ${countryFlags[match.t1]} ${match.t1} - ${
+          countryFlags[match.t2]
+        } ${match.t2}     |     :stadium:  ${match.stadium} `,
+      },
+    })),
+  ];
+
+  await sendMessage({
+    blocks: groupMessages,
   });
 };
 
@@ -67,6 +102,9 @@ const processMessage = (command, details = []) => {
       break;
     case "groups":
       sendGroups();
+      break;
+    case "today":
+      sendTodayMatch();
       break;
   }
 };
