@@ -109,7 +109,7 @@ const sendGroupMatch = async (group) => {
       type: "header",
       text: {
         type: "plain_text",
-        text: ":soccer:  Euro 2020: Today match",
+        text: `:soccer:  Euro 2020: Group ${group.toUpperCase()} matches`,
       },
     },
     ...todaySchedule.map(buildMatch),
