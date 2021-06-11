@@ -9,6 +9,8 @@ slackEvents.on("message", (event) => {
   if (event.user === process.env.BOT_ID) {
     return;
   }
+  if (event.channel !== process.env.SLACK_CHANNEL) return;
+
   console.log(
     `Received a message event: user ${event.user} in channel ${event.channel} says ${event.text}`
   );
@@ -24,11 +26,5 @@ slackEvents.on("message", (event) => {
 
 // Handle errors (see `errorCodes` export)
 slackEvents.on("error", console.error);
-
-// Start a basic HTTP server
-// slackEvents.start(port).then(() => {
-//   // Listening on path '/slack/events' by default
-//   console.log(`server listening on port ${port}`);
-// });
 
 module.exports = slackEvents;
