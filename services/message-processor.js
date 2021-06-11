@@ -58,6 +58,18 @@ const sendGroups = async () => {
   });
 };
 
+const buildMatch = (match) => ({
+  type: "section",
+  text: {
+    type: "mrkdwn",
+    text: `:alarm_clock: ${match.fullDate.format("DD/MM @ HH:mm")}    |    ${
+      countryFlags[match.t1]
+    } ${match.t1} - ${countryFlags[match.t2]} ${
+      match.t2
+    }     |     :stadium:  ${match.stadium} `,
+  },
+});
+
 const sendTodayMatch = async () => {
   const schedules = getSchedules();
 
@@ -68,7 +80,6 @@ const sendTodayMatch = async () => {
     return s.fullDate.isAfter(from) && s.fullDate.isBefore(to);
   });
 
-  console.log(todaySchedule);
   const groupMessages = [
     {
       type: "header",
@@ -77,17 +88,31 @@ const sendTodayMatch = async () => {
         text: ":soccer:  Euro 2020: Today match",
       },
     },
-    ...todaySchedule.map((match) => ({
-      type: "section",
+    ...todaySchedule.map(buildMatch),
+  ];
+
+  await sendMessage({
+    blocks: groupMessages,
+  });
+};
+
+const sendGroupMatch = async (group) => {
+  const searchGroup = group.toLowerCase();
+  const schedules = getSchedules();
+
+  const todaySchedule = schedules.filter(
+    (s) => s.group.toLowerCase() === searchGroup
+  );
+
+  const groupMessages = [
+    {
+      type: "header",
       text: {
-        type: "mrkdwn",
-        text: `:alarm_clock: ${match.fullDate.format(
-          "DD/MM @ HH:mm"
-        )}    |    ${countryFlags[match.t1]} ${match.t1} - ${
-          countryFlags[match.t2]
-        } ${match.t2}     |     :stadium:  ${match.stadium} `,
+        type: "plain_text",
+        text: ":soccer:  Euro 2020: Today match",
       },
-    })),
+    },
+    ...todaySchedule.map(buildMatch),
   ];
 
   await sendMessage({
@@ -106,6 +131,8 @@ const processMessage = (command, details = []) => {
     case "today":
       sendTodayMatch();
       break;
+    case "match":
+      sendGroupMatch(details[0]);
   }
 };
 
