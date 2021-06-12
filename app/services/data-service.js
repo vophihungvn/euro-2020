@@ -44,6 +44,44 @@ const countryFlags = {
 const tables = {};
 const schedules = [];
 
+const teamPadding = {
+  // A
+  Turkey: 10,
+  Italy: 10,
+  Wales: 9,
+  Switzerland: 13,
+
+  // //B
+  // Denmark: "🇩🇰",
+  // Finland: "🇫🇮",
+  // Belgium: "🇧🇪",
+  // Russia: "🇷🇺",
+
+  // //C
+  // Netherlands: "🇳🇱",
+  // Ukraine: "🇺🇦",
+  // Austria: "🇦🇹",
+  // "North Macedonia": "🇲🇰",
+
+  // //D
+  // England: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+  // Croatia: "🇭🇷",
+  // Scotland: "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+  // "Czech Republic": "🇨🇿",
+
+  // //E
+  // Spain: "🇪🇸",
+  // Sweden: "🇸🇪",
+  // Poland: "🇵🇱",
+  // Slovakia: "🇸🇰",
+
+  // //F
+  // Hungary: "🇭🇺",
+  // Portugal: "🇵🇹",
+  // France: "🇫🇷",
+  // Germany: "🇩🇪",
+};
+
 const readTable = () => {
   const groups = fs.readFileSync("data/groups.txt").toString().split("\n");
   groups.forEach((group) => {
@@ -89,8 +127,12 @@ const getGroups = () => {
 
 init();
 
+const getFullCountryName = (country) => `${countryFlags[country]} ${country}`;
+
 module.exports = {
   getGroups,
   getSchedules,
   countryFlags,
+  teamPadding,
+  getFullCountryName,
 };
