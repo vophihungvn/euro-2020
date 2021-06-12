@@ -72,7 +72,9 @@ const buildMatch = (match) => {
     type: "section",
     text: {
       type: "mrkdwn",
-      text: `:alarm_clock: ${mm.format("DD/MM @ HH:mm")}    |   ${
+      text: `:alarm_clock: ${mm
+        .utcOffset("+07:00")
+        .format("DD/MM @ HH:mm")}    |   ${
         match.stage === "GROUP_STAGE" ? match.group : match.stage
       }   |    ${getFullCountryName(match?.homeTeam?.name)}     ${
         match.status !== "SCHEDULED"
@@ -88,8 +90,8 @@ const sendTodayMatch = async () => {
 
   const matches = JSON.parse(fs.readFileSync("data/temp-data/matches.json"));
 
-  const from = moment().hour(18).minute(0);
-  const to = moment().add(1, "d").hour(6);
+  const from = moment().utcOffset("+07:00").hour(18).minute(0);
+  const to = moment().utcOffset("+07:00").add(1, "d").hour(6);
 
   const todaySchedule = matches.filter((s) => {
     const mm = moment(s.utcDate);
