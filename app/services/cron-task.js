@@ -3,7 +3,7 @@ const moment = require("moment");
 const cron = require("node-cron");
 const { sendMessage } = require("./slack-service");
 const { getFullCountryName } = require("./data-service");
-const { getMatch } = require("./football-api-data");
+const { getMatch, getMatchDetail } = require("./football-api-data");
 
 const buildMatchBlock = (match) => {
   return {
@@ -14,7 +14,7 @@ const buildMatchBlock = (match) => {
         match.score.fullTime.homeTeam
       } - ${match.score.fullTime.awayTeam} ${getFullCountryName(
         match?.awayTeam?.name
-      )}`,
+      )}            | [id: ${match.id}] | `,
     },
   };
 };
@@ -70,93 +70,95 @@ const syncMatch = async () => {
 
   // check change
 
-  inPlayMatches.forEach(async (inPlay) => {
-    const lastInPlay = currentInPlay.find((match) => match.id === inPlay.id);
-    if (lastInPlay) {
-      if (
-        lastInPlay?.score?.fullTime?.homeTeam !==
-        inPlay?.score?.fullTime?.homeTeam
-      ) {
+  await Promise.all(
+    inPlayMatches.map(async (inPlay) => {
+      const lastInPlay = currentInPlay.find((match) => match.id === inPlay.id);
+      if (lastInPlay) {
         if (
-          lastInPlay?.score?.fullTime?.homeTeam <
+          lastInPlay?.score?.fullTime?.homeTeam !==
           inPlay?.score?.fullTime?.homeTeam
         ) {
-          await sendMessage({
-            blocks: [
-              {
-                type: "header",
-                text: {
-                  type: "plain_text",
-                  text: `:soccer:  Euro 2020: Goal for ${inPlay.homeTeam.name} !!!!! :soccer:`,
+          if (
+            lastInPlay?.score?.fullTime?.homeTeam <
+            inPlay?.score?.fullTime?.homeTeam
+          ) {
+            await sendMessage({
+              blocks: [
+                {
+                  type: "header",
+                  text: {
+                    type: "plain_text",
+                    text: `:soccer:  Euro 2020: Goal for ${inPlay.homeTeam.name} !!!!! :soccer:`,
+                  },
                 },
-              },
-              buildMatchBlock(inPlay),
-            ],
-          });
-        } else {
-          await sendMessage({
-            blocks: [
-              {
-                type: "header",
-                text: {
-                  type: "plain_text",
-                  text: ":soccer:  Euro 2020: Goal disallowed  !!!!! :soccer:",
+                buildMatchBlock(inPlay),
+              ],
+            });
+          } else {
+            await sendMessage({
+              blocks: [
+                {
+                  type: "header",
+                  text: {
+                    type: "plain_text",
+                    text: ":soccer:  Euro 2020: Goal disallowed  !!!!! :soccer:",
+                  },
                 },
-              },
-              buildMatchBlock(inPlay),
-            ],
-          });
-        }
-        // send home team new score
-        console.log("Change score home", {
-          lastInPlay,
-          inPlay,
-        });
-      }
-
-      if (
-        lastInPlay?.score?.fullTime?.awayTeam !==
-        inPlay?.score?.fullTime?.awayTeam
-      ) {
-        // send home team new score
-        if (
-          lastInPlay?.score?.fullTime?.homeTeam <
-          inPlay?.score?.fullTime?.homeTeam
-        ) {
-          await sendMessage({
-            blocks: [
-              {
-                type: "header",
-                text: {
-                  type: "plain_text",
-                  text: `:soccer:  Euro 2020: Goal for ${inPlay.awayTeam.name} !!!!! :soccer:`,
-                },
-              },
-              buildMatchBlock(inPlay),
-            ],
-          });
-        } else {
-          await sendMessage({
-            blocks: [
-              {
-                type: "header",
-                text: {
-                  type: "plain_text",
-                  text: ":soccer:  Euro 2020: Goal disallowed  !!!!! :soccer:",
-                },
-              },
-              buildMatchBlock(inPlay),
-            ],
+                buildMatchBlock(inPlay),
+              ],
+            });
+          }
+          // send home team new score
+          console.log("Change score home", {
+            lastInPlay,
+            inPlay,
           });
         }
 
-        console.log("Change away home", {
-          lastInPlay,
-          inPlay,
-        });
+        if (
+          lastInPlay?.score?.fullTime?.awayTeam !==
+          inPlay?.score?.fullTime?.awayTeam
+        ) {
+          // send home team new score
+          if (
+            lastInPlay?.score?.fullTime?.homeTeam <
+            inPlay?.score?.fullTime?.homeTeam
+          ) {
+            await sendMessage({
+              blocks: [
+                {
+                  type: "header",
+                  text: {
+                    type: "plain_text",
+                    text: `:soccer:  Euro 2020: Goal for ${inPlay.awayTeam.name} !!!!! :soccer:`,
+                  },
+                },
+                buildMatchBlock(inPlay),
+              ],
+            });
+          } else {
+            await sendMessage({
+              blocks: [
+                {
+                  type: "header",
+                  text: {
+                    type: "plain_text",
+                    text: ":soccer:  Euro 2020: Goal disallowed  !!!!! :soccer:",
+                  },
+                },
+                buildMatchBlock(inPlay),
+              ],
+            });
+          }
+
+          console.log("Change away home", {
+            lastInPlay,
+            inPlay,
+          });
+        }
       }
-    }
-  });
+    })
+  );
 
   // check finished match
   const finishedMatch = currentInPlay.filter((match) => {
@@ -195,7 +197,7 @@ const syncMatch = async () => {
   return inPlayMatches;
 };
 
-cron.schedule("*/2 * * * *", () => {
+cron.schedule("*/30 * * * * *", () => {
   console.log("running every 30s");
   console.log(moment().format("YYYY-MM-DD HH:mm:ss"));
   syncMatch();

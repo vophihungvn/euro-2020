@@ -44,7 +44,17 @@ const getMatch = async () => {
   return response.data;
 };
 
+const getMatchDetail = async (matchId) => {
+  const response = await axios.get(BASE_URL + `matches/${matchId}`, {
+    headers: {
+      "X-Auth-Token": process.env.FB_API_KEY,
+    },
+  });
+  return response.data;
+};
+
 module.exports = {
   getStanding,
   getMatch,
+  getMatchDetail,
 };
