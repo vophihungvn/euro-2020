@@ -26,7 +26,9 @@ const syncMatch = async () => {
 
   // check diff,
   // get current in play
-  const inPlayMatches = matches.filter((match) => match.status === "IN_PLAY");
+  const inPlayMatches = matches.filter(
+    (match) => match.status === "IN_PLAY" || match.status === "PAUSED"
+  );
 
   let currentInPlay = [];
   try {
