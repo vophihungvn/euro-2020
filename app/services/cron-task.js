@@ -121,8 +121,8 @@ const syncMatch = async () => {
         ) {
           // send home team new score
           if (
-            lastInPlay?.score?.fullTime?.homeTeam <
-            inPlay?.score?.fullTime?.homeTeam
+            lastInPlay?.score?.fullTime?.awayTeam <
+            inPlay?.score?.fullTime?.awayTeam
           ) {
             await sendMessage({
               blocks: [
