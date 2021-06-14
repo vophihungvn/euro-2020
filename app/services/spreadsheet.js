@@ -101,7 +101,7 @@ const processBet = async (userId, matchId, team) => {
 
     // Send message bet
     await sendMessage({
-      text: `<@${userId}> sucessfully betted on ${team}, good luck`,
+      text: `<@${userId}> successfully betted on ${team} in match *${choosenMatch["Team 1"]} - ${choosenMatch["Team 2"]}*, good luck!`,
     });
   }
 };
