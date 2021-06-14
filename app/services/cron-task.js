@@ -197,7 +197,7 @@ const syncMatch = async () => {
   return inPlayMatches;
 };
 
-cron.schedule("*/30 * * * * *", () => {
+cron.schedule("*/60 * * * * *", () => {
   console.log("running every 30s");
   console.log(moment().format("YYYY-MM-DD HH:mm:ss"));
   syncMatch();

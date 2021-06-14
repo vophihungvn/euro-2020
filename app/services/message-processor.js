@@ -68,7 +68,7 @@ const sendGroups = async () => {
 
 const buildMatch = (match) => {
   const mm = moment(match.utcDate);
-  return {
+  const matchBlock = {
     type: "section",
     text: {
       type: "mrkdwn",
@@ -76,13 +76,51 @@ const buildMatch = (match) => {
         .utcOffset("+07:00")
         .format("DD/MM @ HH:mm")}    |   ${
         match.stage === "GROUP_STAGE" ? match.group : match.stage
-      }   |    ${getFullCountryName(match?.homeTeam?.name)}     ${
+      }\n${getFullCountryName(match?.homeTeam?.name)}     ${
         match.status !== "SCHEDULED"
           ? `*${match.score.fullTime.homeTeam} - ${match.score.fullTime.awayTeam}*`
           : " *-* "
       }     ${getFullCountryName(match?.awayTeam?.name)}`,
     },
   };
+
+  if (mm.isSameOrAfter(moment())) {
+    matchBlock.accessory = {
+      action_id: "select_bet",
+      type: "static_select",
+      placeholder: {
+        type: "plain_text",
+        emoji: true,
+        text: "Place your bet",
+      },
+      options: [
+        {
+          text: {
+            type: "plain_text",
+            emoji: true,
+            text: getFullCountryName(match?.homeTeam?.name),
+          },
+          value: JSON.stringify({
+            match: match.id,
+            team: match.homeTeam.name,
+          }),
+        },
+        {
+          text: {
+            type: "plain_text",
+            emoji: true,
+            text: getFullCountryName(match?.awayTeam?.name),
+          },
+          value: JSON.stringify({
+            match: match.id,
+            team: match.awayTeam.name,
+          }),
+        },
+      ],
+    };
+  }
+
+  return matchBlock;
 };
 
 const sendTodayMatch = async () => {

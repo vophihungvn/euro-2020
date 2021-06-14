@@ -3,6 +3,7 @@ const moment = require("moment");
 const Router = require("express").Router;
 const { getStanding, getMatch } = require("./services/football-api-data");
 const { syncMatch } = require("./services/cron-task");
+const { readSheet, popuplateData } = require("./services/spreadsheet");
 
 const router = Router();
 
@@ -37,6 +38,13 @@ router.get("/sync/match", async (req, res) => {
 
   res.json({
     status: matches,
+  });
+});
+
+router.get("/test-sheet", async (req, res) => {
+  await popuplateData();
+  res.json({
+    status: "ok",
   });
 });
 
