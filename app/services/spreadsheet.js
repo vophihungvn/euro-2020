@@ -83,7 +83,7 @@ const processBet = async (userId, matchId, team) => {
     // not registered yet
     console.log("User not registerd");
     await sendMessage({
-      text: `This user has not been registered yet. Receiver user: ${userId}`,
+      text: `This user has not been registered yet. Receive user: <@${userId}> - ${userId}`,
     });
     return;
   }
